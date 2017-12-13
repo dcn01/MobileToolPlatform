@@ -34,9 +34,8 @@ class ApkController(object):
             return None
         st = apklist.sort(key=lambda fn: os.path.getmtime(self.result_dir+"\\"+fn) if not os.path.isdir(self.result_dir + "\\" + fn) else 0)
         # d=datetime.datetime.fromtimestamp(os.path.getmtime(result_dir+"\\"+apklist[-1]))
-        # print d
         fname = apklist[-1]
-        fpath = os.path.join(self.result_dir,fname)
+        fpath = os.path.join(self.result_dir, fname)
         return fpath, fname
     '''
     apklsit是获取当前文件夹下的所有apk文件，返回一个list。
@@ -53,14 +52,12 @@ class ApkController(object):
     '''
     def apk_abs_path(self, apkName):
         try:
-            abspath = os.path.join(self.result_dir,apkName)
+            abspath = os.path.join(self.result_dir, apkName)
             if not os.path.exists(abspath):
-                # easygui.msgbox('>>>None apk file to REMOVE')
-                wx.MessageDialog(None, 'None apk file to REMOVE', style=wx.OK | wx.CANCEL | wx.CENTRE).ShowModal()
+                print 'None apk file to REMOVE'
                 return None
         except TypeError, e:
-            # easygui.msgbox('You cant choices one apk file for install ,so apkAbsPath happend TypeError')
-            wx.MessageDialog(None, 'You cant choices one apk file for install ,so apkAbsPath happend TypeError', style=wx.OK | wx.CANCEL | wx.CENTRE).ShowModal()
+            print 'You cant choices one apk file for install ,so apkAbsPath happend TypeError'
             return None
         return abspath
     '''
@@ -78,12 +75,12 @@ class ApkController(object):
                 res = re.findall(regc, res)
                 if res is not None and len(res) > 0:
                     pname = str(res[0])
-                wx.LogMessage("the apk's package name is [%s]" % pname)
+                print ("the apk's package name is [%s]" % pname)
                 return pname
             else:
                 return None
         except Exception, e:
-            wx.LogMessage("An error occurred environment variable on aapt")
+            print ("An error occurred environment variable on aapt")
     '''
     使用python的os中的remove方法来删除指定路径的文件，删除之前先判断是否存在该文件。
     '''

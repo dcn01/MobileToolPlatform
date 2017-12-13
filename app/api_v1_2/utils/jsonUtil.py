@@ -13,7 +13,7 @@
 
 import json
 
-from app.api_v1_2.utils.filePathUtils import FilePathGetter
+from app.api_v1_2.utils.filePathUtil import FilePathGetter
 
 """
 这个类中主要用于将手机的基础信息以json的形式保存到文档中

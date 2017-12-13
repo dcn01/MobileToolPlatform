@@ -8,7 +8,7 @@
 @contact: jayzhen_testing@163.com
 @site: http://blog.csdn.net/u013948858
 @software: PyCharm
-@file: filePathUtils.py
+@file: filePathUtil.py
 @time: 2017/7/28 11:35
 """
 import os

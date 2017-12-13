@@ -24,7 +24,7 @@ import time
 
 import exception
 from app.api_v1_2.utils.func_deprecated import deprecated
-from app.api_v1_2.utils.filePathUtils import FilePathGetter
+from app.api_v1_2.utils.filePathUtil import FilePathGetter
 from permission import android_permissions
 
 reload(sys)

@@ -6,5 +6,6 @@
 
 URL = {
     'mobileinfo': '/api/v1.2/platform/mobileinfo',
-    'mobilecursor': '/api/v1.2/mobile/cursor'
+    'mobilecursor': '/api/v1.2/mobile/cursor',
+    'apkopt': '/api/v1.2/apk/opt'
 }

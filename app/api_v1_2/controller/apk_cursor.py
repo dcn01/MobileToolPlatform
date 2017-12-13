@@ -26,6 +26,8 @@ class PackageController(object):
         self.sno_list = Device().get_devices()
         self.android = AndroidUtils()
 
+
+
     def uninstall_all(self, package_name):
         '''
         uninstall_All参数指定要卸载的包名，该方法会调用uninstall_One卸载所有链接在电脑上的手机中的应用
@@ -41,8 +43,8 @@ class PackageController(object):
         '''
         指定设备，并指定包名进行应用的卸载
         '''
-        uninstall_result = self.android.adb(sno,'uninstall %s'%package_name).stdout.read()
-        if re.findall(r'Success',uninstall_result):
+        uninstall_result = self.android.adb(sno, 'uninstall %s' % package_name).stdout.read()
+        if re.findall(r'Success', uninstall_result):
             print ('[%s] uninstall [%s] [SUCCESS]' %(sno,package_name))
         else:
             print ('no assign package')
