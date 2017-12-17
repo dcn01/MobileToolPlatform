@@ -12,7 +12,7 @@
 """
 
 from datetime import datetime
-from app.api_v1_0.managers.modules import fields
+from app.api_v1_2.initial import fields
 
 lists = {
     "Key": fields.String(default=""),
