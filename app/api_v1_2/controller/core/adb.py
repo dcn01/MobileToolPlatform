@@ -486,6 +486,15 @@ class AndroidUtils(object):
             return "01"
 
     def is_screen_locked(self, sno):
+        """
+        查看当前手机屏幕是什么状态：锁屏（0，1） * 亮黑（0，1）
+        三种情况需要考虑
+        2：黑屏上锁、0：亮屏解锁、1：亮屏上锁
+        四种情况去考虑就是有无锁、是否亮屏，我觉得还是按其中来吧
+        10:锁黑、11：锁亮、01：开亮、00：开黑
+        adb shell dumpsys window policy | grep isStatusBarKeyguard 确认是否有锁
+        adb shell dumpsys window policy | grep ScreenOn 是否亮屏
+        """
         window_policy = self.shell(sno, "dumpsys window policy").stdout.read()
         locked_status = re.findall(r"isStatusBarKeyguard=(\w+)", window_policy)[0]
         bright_status = re.findall(r"mScreenOnFully=(\w+)", window_policy)[0]
