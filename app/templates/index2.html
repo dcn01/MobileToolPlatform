@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block page_content %}
+<!--<div>-->
+    <!--<h1>hello , this is flask web framework !</h1><br><br>-->
+
+    <!--<form action="/index" method="post">-->
+        <!--<span>姓名：<input id="username" type="text" alt="姓名" content="姓名"></span><br><br>-->
+        <!--<span>密码：<input id="password" type="text" alt="密码"></span><br><br>-->
+        <!--<button type="submit">确定</button>-->
+        <!--<p>The local date and time is {{ moment(current_time).format('LLL') }}.</p>-->
+        <!--<p>That was {{ moment(current_time).fromNow(refresh=True) }}</p>-->
+    <!--</form>-->
+<!--</div>-->
+
+<div class="page-header">
+    <h1>Hello, {% if name %}{{ name }}{% else %}Stranger{% endif %}!</h1>
+</div>
+    {{ wtf.quick_form(form) }}
+
+
+{% endblock %}
