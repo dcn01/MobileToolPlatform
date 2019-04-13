@@ -1,10 +1,10 @@
 ﻿**注意：修改模块名后，记得将类中的import修改，还要清除一下原先编译好的pyc文件**
 
-技术实现所使用到的python模块及方法：
-    1.flask：jsonify、request、abort、make_response、url_for
-    2.flask-httpauth：HTTPBasicAuth
-    3.flask-restful：reqparse.RequestParser、Api、Resourceen、endpoint、fields、marshal
-    4.fields.Uri、request.json、request.values
+### 技术实现所使用到的python模块及方法：
+1. flask：jsonify、request、abort、make_response、url_for
+2. flask-httpauth：HTTPBasicAuth
+3. flask-restful：reqparse.RequestParser、Api、Resourceen、endpoint、fields、marshal
+4. fields.Uri、request.json、request.values
 
 add_resource 函数使用指定的 endpoint 注册路由到框架上。如果没有指定 endpoint，Flask-RESTful 会根据类名生成一个，但是有时候有些函数比如 url_for 需要 endpoint，因此我会明确给 endpoint 赋值。
 fields.Uri 是一个用于生成一个 URL 的特定的参数。 它需要的参数是 endpoint。
@@ -20,7 +20,9 @@ managers:这里有个modules模块主要是管理接口使用了那些库、模�
 
 *******************************************************************
 
-第十四版修改需求：20171021
+### 第十四版修改需求：20171021
+
+```text
     1.构建设备信息获取接口  get请求（先不添加header和token）获取：手机的各种信息
     2.为改接口设置404和500的错误提示
     3.为后台接口添加日志配置
@@ -47,8 +49,11 @@ managers:这里有个modules模块主要是管理接口使用了那些库、模�
       什么作用？其实就只是填充和优化测试过程中的数据获取，该工程主要是为了flask-restful api而生，所以后期还是主攻API，然后后续的
       appium自动化测试看看是否可以贯穿一起
       也就是基建部分到此结束，后面api实践过程再进行优化和实例
+```
 
-第十五版修改需求：20171122
+### 第十五版修改需求：20171122
+
+```text
     1.修改数据获取的中间方式，及返回数据后的检验方式（设备连接校验、对象属性校验）
     2.整个数据流程更流程和低耦合化
     3.已经实现了两个查询的接口，一个是获取手机信息、一个是获取运行时信息，那么后面我么需要添加
@@ -57,3 +62,14 @@ managers:这里有个modules模块主要是管理接口使用了那些库、模�
       c.清理数据
       ...
     4.token使用方式，user和passw加时间来控制可用性，提供token解密和验证的方法，接口请求的token不可用就返回失败。
+```
+
+### 最后的描述 20190413
+
+```
+作为一个测试开发，在质量体系中，去构建辅助和补充测试场景的工具，技术选型是多样性的，编程语言也是数不胜数,
+其实这个也不用很纠结，这个选择取决你的兴趣、已有的基础、所在环境的现状。目前的我，是一个综合性的存在，
+会使用java、python、jquery编程技术去完成测试工具的实现，挑战性，其实蛮多，也在于实际的应用
+和困难取舍，这里需要学会的就是‘拥抱变化’。本工程其实有很多文件夹内容被ignore，但开放出来的很有用，目前也还在用
+做简单的服务平台（flask+pymsyql+pandas+flask-restful）
+```

@@ -1,0 +1,6 @@
+site_name: md-online
+nav:
+    - Home: index.md
+    - Test: 版本测试问题.md
+    - About: about.md
+theme: readthedocs

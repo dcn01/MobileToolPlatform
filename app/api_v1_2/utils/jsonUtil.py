@@ -30,7 +30,7 @@ class JsonParser(object):
         fin = open(json_file_path, "r")
         try:
             self.json_obj = json.load(fin)
-        except ValueError, e:
+        except ValueError as e:
             self.json_obj = {}
         fin.close()
         return self.json_obj
@@ -51,7 +51,7 @@ class JsonParser(object):
                 return None
             with open(self.json_file_path, 'w+') as json_f_obj:
                 json_f_obj.write(json.dumps(json_obj, sort_keys=True, indent=4, separators=(',', ': '),encoding="gbk",ensure_ascii=True))
-        except Exception, e:
-            print e
+        except Exception as e:
+            print str(e)
         else:
             print "device info collect work has done, go to check json file"
